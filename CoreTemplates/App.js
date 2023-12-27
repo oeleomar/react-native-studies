@@ -6,6 +6,7 @@ import {
   View,
   ImageBackground,
   ScrollView,
+  Button,
 } from "react-native";
 
 const logoFile = require("./assets/adaptive-icon.png");
@@ -13,41 +14,46 @@ const logoFile = require("./assets/adaptive-icon.png");
 export default function App() {
   return (
     <View style={styles.view1}>
-      <View style={styles.view2}>
-        <Text style={{ color: "pink", fontSize: 40 }}>
-          <Text style={{ color: "red", fontSize: 40 }}>1...</Text>2...
-        </Text>
-      </View>
-      <View style={styles.view3}>
-        {/* <Image source={logoFile} style={{ width: 300, height: 300 }} />
+      <ScrollView>
+        <View style={styles.view2}>
+          <Text style={{ color: "pink", fontSize: 40 }}>
+            <Text style={{ color: "red", fontSize: 40 }}>1...</Text>2...
+          </Text>
+        </View>
+        <View style={styles.view3}>
+          {/* <Image source={logoFile} style={{ width: 300, height: 300 }} />
         <Image
           source={{ uri: "https://picsum.photos/300" }}
           style={{ width: 300, height: 300 }}
         /> */}
-        {/* <ImageBackground source={logoFile} style={{ flex: 1 }}>
+          {/* <ImageBackground source={logoFile} style={{ flex: 1 }}>
         <Text>IMAGE TEXT</Text>
       </ImageBackground> */}
-      </View>
-      <View style={styles.view4}>
-        <ScrollView>
-          <Image
-            source={{ uri: "https://picsum.photos/300" }}
-            style={{ width: 300, height: 300 }}
-          />
-          <Image
-            source={{ uri: "https://picsum.photos/300" }}
-            style={{ width: 300, height: 300 }}
-          />
-          <Image
-            source={{ uri: "https://picsum.photos/300" }}
-            style={{ width: 300, height: 300 }}
-          />
-          <Image
-            source={{ uri: "https://picsum.photos/300" }}
-            style={{ width: 300, height: 300 }}
-          />
-        </ScrollView>
-      </View>
+        </View>
+        <View style={styles.view4}>
+          <ScrollView>
+            <Image
+              source={{ uri: "https://picsum.photos/300" }}
+              style={{ width: 300, height: 300 }}
+            />
+            <Image
+              source={{ uri: "https://picsum.photos/300" }}
+              style={{ width: 300, height: 300 }}
+            />
+            <Image
+              source={{ uri: "https://picsum.photos/300" }}
+              style={{ width: 300, height: 300 }}
+            />
+            <Image
+              source={{ uri: "https://picsum.photos/300" }}
+              style={{ width: 300, height: 300 }}
+            />
+          </ScrollView>
+        </View>
+        <View style={styles.view5}>
+          <Button title="PRESS" onPress={() => console.log("Pressed")} />
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -71,5 +77,10 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     backgroundColor: "lightyellow",
+  },
+  view5: {
+    width: 200,
+    height: 200,
+    backgroundColor: "lightpink",
   },
 });

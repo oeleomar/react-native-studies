@@ -7,6 +7,7 @@ import {
   ImageBackground,
   ScrollView,
   Button,
+  Pressable,
 } from "react-native";
 
 const logoFile = require("./assets/adaptive-icon.png");
@@ -57,6 +58,12 @@ export default function App() {
             onPress={() => console.log("Pressed")}
           />
         </View>
+        <View style={styles.view6}>
+          {/* Temos várias outras PROPS como onLongPress que podem ser úteis em alguns momentos */}
+          <Pressable onPress={() => console.log("Image Pressed")}>
+            <Image source={logoFile} style={{ height: 200, width: 200 }} />
+          </Pressable>
+        </View>
       </ScrollView>
     </View>
   );
@@ -86,5 +93,10 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     backgroundColor: "lightpink",
+  },
+  view6: {
+    width: 200,
+    height: 200,
+    backgroundColor: "lightgray",
   },
 });

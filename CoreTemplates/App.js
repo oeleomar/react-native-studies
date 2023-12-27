@@ -70,20 +70,20 @@ export default function App() {
         </View>
         <View style={styles.view7}>
           <Button title="Open Modal" onPress={() => setIsModalVisible(true)} />
+          <Modal
+            visible={isModalVisible}
+            /* Essa próxima prop é para ffechar quando o usuário voltar pelos botões e não pela UI */
+            onRequestClose={() => setIsModalVisible(false)}
+            animationType="slide"
+            /* Muda a UI  ONLY IOS*/
+            presentationStyle="pageSheet"
+          >
+            <View style={styles.modal}>
+              <Text>MODAL</Text>
+              <Button title="Close" onPress={() => setIsModalVisible(false)} />
+            </View>
+          </Modal>
         </View>
-        <Modal
-          visible={isModalVisible}
-          /* Essa próxima prop é para ffechar quando o usuário voltar pelos botões e não pela UI */
-          onRequestClose={() => setIsModalVisible(false)}
-          animationType="slide"
-          /* Muda a UI  ONLY IOS*/
-          presentationStyle="pageSheet"
-        >
-          <View style={styles.modal}>
-            <Text>MODAL</Text>
-            <Button title="Close" onPress={() => setIsModalVisible(false)} />
-          </View>
-        </Modal>
       </ScrollView>
     </View>
   );

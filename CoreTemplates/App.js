@@ -1,5 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  ScrollView,
+} from "react-native";
 
 const logoFile = require("./assets/adaptive-icon.png");
 
@@ -21,6 +28,26 @@ export default function App() {
         <Text>IMAGE TEXT</Text>
       </ImageBackground> */}
       </View>
+      <View style={styles.view4}>
+        <ScrollView>
+          <Image
+            source={{ uri: "https://picsum.photos/300" }}
+            style={{ width: 300, height: 300 }}
+          />
+          <Image
+            source={{ uri: "https://picsum.photos/300" }}
+            style={{ width: 300, height: 300 }}
+          />
+          <Image
+            source={{ uri: "https://picsum.photos/300" }}
+            style={{ width: 300, height: 300 }}
+          />
+          <Image
+            source={{ uri: "https://picsum.photos/300" }}
+            style={{ width: 300, height: 300 }}
+          />
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -36,6 +63,13 @@ const styles = StyleSheet.create({
     backgroundColor: "lightblue",
   },
   view3: {
+    width: 200,
+    height: 200,
     backgroundColor: "lightgreen",
+  },
+  view4: {
+    width: 200,
+    height: 200,
+    backgroundColor: "lightyellow",
   },
 });

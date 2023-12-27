@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -8,11 +9,14 @@ import {
   ScrollView,
   Button,
   Pressable,
+  Modal,
 } from "react-native";
 
 const logoFile = require("./assets/adaptive-icon.png");
 
 export default function App() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
     <View style={styles.view1}>
       <ScrollView>
@@ -64,6 +68,22 @@ export default function App() {
             <Image source={logoFile} style={{ height: 200, width: 200 }} />
           </Pressable>
         </View>
+        <View style={styles.view7}>
+          <Button title="Open Modal" onPress={() => setIsModalVisible(true)} />
+        </View>
+        <Modal
+          visible={isModalVisible}
+          /* Essa próxima prop é para ffechar quando o usuário voltar pelos botões e não pela UI */
+          onRequestClose={() => setIsModalVisible(false)}
+          animationType="slide"
+          /* Muda a UI  ONLY IOS*/
+          presentationStyle="pageSheet"
+        >
+          <View style={styles.modal}>
+            <Text>MODAL</Text>
+            <Button title="Close" onPress={() => setIsModalVisible(false)} />
+          </View>
+        </Modal>
       </ScrollView>
     </View>
   );
@@ -98,5 +118,13 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     backgroundColor: "lightgray",
+  },
+  view7: {
+    width: 200,
+    height: 200,
+    backgroundColor: "red",
+  },
+  modal: {
+    backgroundColor: "pink",
   },
 });

@@ -51,7 +51,11 @@ export default function App() {
           </ScrollView>
         </View>
         <View style={styles.view5}>
-          <Button title="PRESS" onPress={() => console.log("Pressed")} />
+          <Button
+            title="PRESS"
+            color="midnightblue"
+            onPress={() => console.log("Pressed")}
+          />
         </View>
       </ScrollView>
     </View>

@@ -75,4 +75,23 @@ export const PokemonTypeText = styled.Text`
   `}
 `;
 
-export const RightSide = styled.View``;
+export const RightSide = styled.View`
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  position: relative;
+`;
+
+export const PokemonImage = styled.Image`
+  margin-top: -40px;
+  width: 130px;
+  height: 130px;
+`;
+
+export const PokeballDetail = styled.Image`
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  transform: scale(1.2);
+  z-index: -1;
+`;

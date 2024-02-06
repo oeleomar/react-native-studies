@@ -1,7 +1,6 @@
 import React from "react";
-
 import dotsImage from "../../../assets/img/dots.png";
-
+import pokebollDetail from "../../../assets/img/pokeballCard.png";
 import * as S from "./styles";
 import { Pokemon } from "../../pages/Home";
 import { TouchableOpacityProps } from "react-native";
@@ -24,7 +23,14 @@ const Card = ({ data, ...rest }: DataProps) => {
           ))}
         </S.PokemonContentType>
       </S.LeftSide>
-      <S.RightSide />
+      <S.RightSide>
+        <S.PokemonImage
+          source={{
+            uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
+          }}
+        />
+        <S.PokeballDetail source={pokebollDetail} />
+      </S.RightSide>
     </S.PokemonCard>
   );
 };

@@ -28,4 +28,4 @@ export default {
       ground: "#F78551",
     },
   },
-};
+} as const;

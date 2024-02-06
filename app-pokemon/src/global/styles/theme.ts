@@ -16,7 +16,6 @@ export default {
       eletric: "#F2CB55",
       ground: "#F78551",
     },
-
     boxType: {
       grass: "#62B957",
       fire: "#FD7D24",
